@@ -7,27 +7,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
-  Widgetbuild (BuildContext context)
-  {
+  Widgetbuild(BuildContext context) {
     return MaterialApp(
-      title:"Basic Flutter",
-      home:Scaffold(
-        appBar:AppBar(
-          title:Text("Basic flutter 01"),
-          backgroundColor:Colors.blue[400],
-          elevation: 10.5,
-
+      title: "Basic Flutter",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Basic flutter 01"),
+          backgroundColor: Colors.blue[400],
         ),
         body: Row(
           children: [
-            Text(data)
+            Icon(Icons.star, size: 40, color: Colors.amber),
+            Icon(Icons.star, size: 40, color: Colors.amber),
+            Icon(Icons.star, size: 40, color: Colors.amber),
+            Icon(Icons.star, size: 40, color: Colors.amber),
+            Icon(Icons.star, size: 40, color: Colors.amber),
           ],
-         
         ),
-      )
-    )
+      ),
+    );
   }
-
-
-  
 }
