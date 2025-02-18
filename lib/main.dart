@@ -16,18 +16,22 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue[400],
           centerTitle: true,
         ),
-        body: Container(
-          height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Icon(Icons.star, size: 40, color: Colors.amber),
-              Icon(Icons.star, size: 40, color: Colors.amber),
-              Icon(Icons.star, size: 40, color: Colors.amber),
-              Icon(Icons.star, size: 40, color: Colors.amber),
-              Icon(Icons.star, size: 40, color: Colors.amber),
-            ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            height: 600,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                100,
+                (index) => Icon(
+                  Icons.star,
+                  size: index.toDouble(),
+                  color: Colors.amber,
+                ),
+              ),
+            ),
           ),
         ),
       ),
