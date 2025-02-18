@@ -1,39 +1,44 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Basic Flutter",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Basic flutter 01"),
-          backgroundColor: Colors.blue[400],
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Container(
-            height: 600,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: List.generate(
-                100,
-                (index) => Icon(
-                  Icons.star,
-                  size: index.toDouble(),
-                  color: Colors.amber,
-                ),
-              ),
-            ),
+      debugShowCheckedModeBanner: false,
+      home: FlashSaleScreen(),
+    );
+  }
+}
+
+class FlashSaleScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: 10),
+          Text(
+            'Nike.com Flash Sale',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
           ),
-        ),
+          SizedBox(height: 20),
+          Text(
+            'SAVE UP TO',
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            '50%',
+            style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 20),
+          Image.asset('assets/nike.png', height: 200),
+        ],
       ),
     );
   }
